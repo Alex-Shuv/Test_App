@@ -1,0 +1,10 @@
+@import url(vars.css);
+
+:root {
+  font-family: Martian Mono, sans-serif;
+  line-height: 14.4px;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--base_white);
+  background-color: var(--base_black);
+}
