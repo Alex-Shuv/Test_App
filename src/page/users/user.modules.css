@@ -1,0 +1,64 @@
+@import url("../../vars");
+
+.user-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.user-card {
+  min-height: 167px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  max-width: 245px;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: var(--base_black_1);
+  border-radius: 18px;
+  transition: background-color 0.3s linear;
+}
+
+.user-card:hover {
+  background-color: var(--base_black_2);
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.user-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 15px;
+  align-items: center;
+}
+
+.user-pagination-page-count {
+  font-family: Inter, serif;
+  font-size: 14px;
+  line-height: 16.1px;
+  font-weight: 700;
+}
+
+.user-pagination-prev,
+.user-pagination-next {
+  min-height: 36px;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.user-pagination-prev {
+  background-color: var(--base_black_2);
+}
+
+.user-pagination-next {
+  background-color: var(--accent_green);
+  transform: rotate(180deg);
+}
