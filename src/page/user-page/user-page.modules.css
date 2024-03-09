@@ -1,0 +1,48 @@
+@import url("../../vars");
+
+.posts-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.posts-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+
+.posts-user-info-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.posts-user-info-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+.posts-list-item {
+  padding: 15px 20px;
+  border-radius: 18px;
+  background-color: var(--base_black_1);
+}
+
+.posts-list-item-title {
+  font-size: 16px;
+  line-height: 19.2px;
+  font-weight: 700;
+}
+
+.posts-list-item-body {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 15.6px;
+}
