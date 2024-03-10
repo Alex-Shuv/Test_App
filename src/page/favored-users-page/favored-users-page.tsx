@@ -4,7 +4,7 @@ import "./favored-users-page.modules.css";
 
 export const FavoredUsersPage = () => {
   const favoriteUsers = useUsersStore((state) => state.favoriteUsers);
-  console.log(favoriteUsers);
+
   return (
     <>
       {favoriteUsers.length > 0 ? (

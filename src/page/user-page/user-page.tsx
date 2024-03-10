@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useUsersStore } from "../../store/store";
-import FavoritesIcon from "../../assets/favorites-icon.svg";
-import FavoritesIconActive from "../../assets/favorites-icon-active.svg";
+import { FavoritesIcon, FavoritesIconActive } from "../../assets";
 import "./user-page.modules.css";
 
 export const UserPage = () => {
@@ -12,7 +11,6 @@ export const UserPage = () => {
   const getPosts = useUsersStore((state) => state.getPosts);
   const getUser = useUsersStore((state) => state.getUser);
   const toggleFavoriteUser = useUsersStore((state) => state.toggleFavoriteUser);
-  console.log(user);
 
   useEffect(() => {
     getPosts(Number(id));

@@ -1,8 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { UsersPage } from "./page/users-page/users-page";
-import { UserPage } from "./page/user-page/user-page";
-import { FavoredUsersPage } from "./page/favored-users-page/favored-users-page";
 import FavoritesIcon from "./assets/favorites-icon.svg";
+import { FavoredUsersPage, UserPage, UsersPage } from "./page";
 import "./App.css";
 
 export const App = () => {

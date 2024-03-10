@@ -1,5 +1,5 @@
-import { create } from "zustand";
 import { Posts, User, UserState } from "./store-types";
+import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { persist } from "zustand/middleware";
 import axios from "axios";
@@ -21,7 +21,7 @@ export const useUsersStore = create<UserState>()(
       favoriteUsers: [],
 
       getUsersList: async (skip: number) => {
-        const { data } = await axios.get(
+        const { data } = await axios.get<User[]>(
           `http://jsonplaceholder.typicode.com/users?_start=${skip}&_limit=10`
         );
         set({ users: data });

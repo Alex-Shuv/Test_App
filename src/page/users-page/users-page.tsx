@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useUsersStore } from "../../store/store";
 import { Link } from "react-router-dom";
-import ArrowPagination from "../../assets/arrow-pagination.svg";
+import { useUsersStore } from "../../store/store";
+import { ArrowPagination } from "../../assets";
 import "./users-page.modules.css";
 
 export const UsersPage = () => {
