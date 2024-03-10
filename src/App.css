@@ -3,3 +3,17 @@
 .app {
   padding: 70px 120px;
 }
+
+.app-favorite {
+  margin-bottom: 33px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0 13px;
+}
+
+.app-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+}

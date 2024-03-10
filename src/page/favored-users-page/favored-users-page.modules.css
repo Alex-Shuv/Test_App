@@ -1,0 +1,35 @@
+.favored-user-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.favored-user-card {
+  min-height: 167px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  max-width: 245px;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: var(--base_black_1);
+  border-radius: 18px;
+  transition: background-color 0.3s linear;
+}
+
+.favored-user-card:hover {
+  background-color: var(--base_black_2);
+}
+
+.favored-user-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.2px;
+}
+
+.not-favored-users {
+  margin-top: 103px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  text-align: center;
+}
