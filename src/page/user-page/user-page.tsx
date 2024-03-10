@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useUsersStore } from "../../store/store";
 import FavoritesIcon from "../../assets/favorites-icon.svg";
+import FavoritesIconActive from "../../assets/favorites-icon-active.svg";
 import "./user-page.modules.css";
 
 export const UserPage = () => {
@@ -10,6 +11,8 @@ export const UserPage = () => {
   const user = useUsersStore((state) => state.user);
   const getPosts = useUsersStore((state) => state.getPosts);
   const getUser = useUsersStore((state) => state.getUser);
+  const toggleFavoriteUser = useUsersStore((state) => state.toggleFavoriteUser);
+  console.log(user);
 
   useEffect(() => {
     getPosts(Number(id));
@@ -21,12 +24,12 @@ export const UserPage = () => {
       <div className="posts-item">
         <div className="posts-user-info">
           <p className="posts-user-info-name">{user.name}</p>
-          <button>
-            <img
-              src={FavoritesIcon}
-              alt="Избранное"
-              className="posts-user-info-avatar"
-            />
+          <button onClick={() => toggleFavoriteUser(Number(id))}>
+            {user.isFavorite ? (
+              <img src={FavoritesIconActive} alt="Избранное" />
+            ) : (
+              <img src={FavoritesIcon} alt="Избранное" />
+            )}
           </button>
         </div>
         <p className="posts-user-info-title">Posts</p>

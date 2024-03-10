@@ -1,13 +1,14 @@
-type User = {
+export type User = {
   id: number;
   name: string;
   username: string;
   email: string;
   phone: string;
   website: string;
+  isFavorite: boolean;
 };
 
-type Posts = {
+export type Posts = {
   userId: number;
   id: number;
   title: string;
@@ -18,8 +19,9 @@ export type UserState = {
   users: User[];
   posts: Posts[];
   user: User;
-  getUsersList: () => void;
+  favoriteUsers: User[];
+  getUsersList: (skip: number) => void;
   getPosts: (id: number) => void;
-  getUser: (id: number) => void;
-  page: number;
+  getUser: (id: number, state?: User) => void;
+  toggleFavoriteUser: (id: number) => void;
 };

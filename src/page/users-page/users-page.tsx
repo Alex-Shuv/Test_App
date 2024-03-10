@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
 import { useUsersStore } from "../../store/store";
-import "./users-page.modules.css";
 import { Link } from "react-router-dom";
 import ArrowPagination from "../../assets/arrow-pagination.svg";
+import "./users-page.modules.css";
 
 export const UsersPage = () => {
   const getUsersList = useUsersStore((state) => state.getUsersList);
   const users = useUsersStore((state) => state.users);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
 
-  useEffect(() => {
-    getUsersList();
-  }, [getUsersList]);
-
-  const handlePaginationNext = (page: number) => {
-    setPage(page + 1);
-  };
-
-  const handlePaginationPrev = (page: number) => {
-    if (page > 1) {
-      setPage(page - 1);
+  const handlePagination = (page: number, operation: string) => {
+    if (operation === "prev" && page) {
+      setPage((prev) => prev - 1);
+    }
+    if (operation === "next" && page < 10) {
+      setPage((prev) => prev + 1);
     }
   };
+
+  useEffect(() => {
+    getUsersList(page);
+  }, [getUsersList, page]);
 
   return (
     <>
@@ -38,14 +37,14 @@ export const UsersPage = () => {
       </div>
       <div className="user-pagination">
         <button
-          onClick={() => handlePaginationPrev(page)}
+          onClick={() => handlePagination(page, "prev")}
           className="user-pagination-prev"
         >
           <img src={ArrowPagination} alt="Кнопка пагинации назад" />
         </button>
-        <p className="user-pagination-page-count">{page}</p>
+        <p className="user-pagination-page-count">{page + 1}</p>
         <button
-          onClick={() => handlePaginationNext(page)}
+          onClick={() => handlePagination(page, "next")}
           className="user-pagination-next"
         >
           <img src={ArrowPagination} alt="Кнопка пагинации вперед" />
