@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useUsersStore } from "../../store/store";
-import { FavoritesIcon, FavoritesIconActive } from "../../assets";
+import FavoritesIcon from "../../assets/favorites-icon.svg";
+import FavoritesIconActive from "../../assets/favorites-icon-active.svg";
 import "./user-page.modules.css";
 
 export const UserPage = () => {
